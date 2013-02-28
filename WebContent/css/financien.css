@@ -1,0 +1,93 @@
+@CHARSET "ISO-8859-1";
+@font-face {
+	font-family: EDW;
+	src: url('ITCEDSCR.TTF');
+}
+
+@font-face {
+	font-family: AkzC;
+	src: url('AkzidenzGrotesk-Cond.otf');
+}
+@font-face {
+	font-family: AkzB;
+	src: url('AkzidenzGrotesk-Cond.otf');
+}
+body{
+	margin: 0 auto;
+	height: 600px;
+	width: 720px;
+}
+
+.main {
+	margin: 0 auto;
+	float: right;
+	width: 400px;
+	height: 600px;
+}
+.main form{
+	text-align: left;
+	font-size: 2em;
+}
+.main input {
+	font-family: "AkzB";
+	background: white;
+	text-align: left;
+	color: black;	
+	font-size: 1em;
+	
+}
+.main p {
+	text-align: left;
+	width: 400px;
+	font-family: sans-serif;
+	color: gray;
+	font-size: 0.4em;
+	
+}
+.main .logo {
+	position: relative;
+	width: 400px;
+	height: 230px;
+	text-align: center;
+}
+.main .logo img{
+	position: absolute;
+	left: -220px;
+}
+
+.Input {
+	padding-top: 200px;
+	margin: 0 auto;
+	float: left;
+	width: 300px;
+	height: 400px;
+	word-spacing: 1px;	
+	letter-spacing: 1px;
+}
+.Input h2{
+	font-family: "AkzB";
+	font-size: 2em;
+	text-align: right;
+}
+.Input input {
+	font-family: "AkzB";
+	background: white;
+	text-align: center;
+	color: black;	
+	font-size: 1em;
+	
+}
+.Input form{
+	text-align: right;	
+	font-family: "AkzB";
+	font-size: 1.2em;
+	
+}
+.Input p {
+	text-align: right;
+	width: 400px;
+	font-family: sans-serif;
+	color: gray;
+	font-size: 1.6em;
+	
+}

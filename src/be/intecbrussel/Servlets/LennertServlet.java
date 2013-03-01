@@ -13,40 +13,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LennertServlet
- */
 @WebServlet("/LennertServlet")
 public class LennertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final String VIEW = "/WEB-INF/JSP/fbs.jsp";
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public LennertServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		// Met deze methodes kan je een path maken 
+		// dat geschikt is voor uw doeleinden
+
+		String path1 = getServletContext().getRealPath("/WEB-INF/conf/f2.txt");
+
+		String path2 = getServletContext().getRealPath("/WEB-INF/conf/b2.txt");
+
+		String path3 = getServletContext().getRealPath("/WEB-INF/conf/s2.txt");
+
 		RequestDispatcher rqdp = request.getRequestDispatcher(VIEW);
 		StringBuilder message = new StringBuilder();
 		Random rand = new Random();
 		int f = rand.nextInt(63);
 		int b = rand.nextInt(193);
 		int s = rand.nextInt(32);
-		
-		FileReader read = new FileReader(
-				new File(
-						"C:\\Users\\lennertg\\DynamicWebWorkspace\\ServletsAndJSPExampleProject_1\\WebContent\\textfiles\\f2.txt"));
+
+		FileReader read = new FileReader(new File(path1));
 		BufferedReader br = new BufferedReader(read);
 		int count = 0;
 		while (count != f) {
@@ -54,9 +51,7 @@ public class LennertServlet extends HttpServlet {
 			count++;
 		}
 		message.append(br.readLine());
-		read = new FileReader(
-				new File(
-						"C:\\Users\\lennertg\\DynamicWebWorkspace\\ServletsAndJSPExampleProject_1\\WebContent\\textfiles\\b2.txt"));
+		read = new FileReader(new File(path2));
 		br = new BufferedReader(read);
 		count = 0;
 		while (count != b) {
@@ -64,9 +59,7 @@ public class LennertServlet extends HttpServlet {
 			count++;
 		}
 		message.append(" " + br.readLine());
-		read = new FileReader(
-				new File(
-						"C:\\Users\\lennertg\\DynamicWebWorkspace\\ServletsAndJSPExampleProject_1\\WebContent\\textfiles\\s2.txt"));
+		read = new FileReader(new File(path3));
 		br = new BufferedReader(read);
 		count = 0;
 		while (count != s) {
@@ -83,13 +76,9 @@ public class LennertServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 	}
 
 }

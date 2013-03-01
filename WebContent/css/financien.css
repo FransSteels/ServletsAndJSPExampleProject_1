@@ -1,4 +1,5 @@
 @CHARSET "ISO-8859-1";
+
 @font-face {
 	font-family: EDW;
 	src: url('ITCEDSCR.TTF');
@@ -8,11 +9,13 @@
 	font-family: AkzC;
 	src: url('AkzidenzGrotesk-Cond.otf');
 }
+
 @font-face {
 	font-family: AkzB;
 	src: url('AkzidenzGrotesk-Cond.otf');
 }
-body{
+
+body {
 	margin: 0 auto;
 	height: 600px;
 	width: 720px;
@@ -24,70 +27,85 @@ body{
 	width: 400px;
 	height: 600px;
 }
-.main form{
+
+.main form {
 	text-align: left;
 	font-size: 2em;
+	margin-top: 5px;
 }
+
 .main input {
-	font-family: "AkzB";
+	font-family: sans-serif;
 	background: white;
 	text-align: left;
-	color: black;	
+	color: black;
 	font-size: 1em;
-	
 }
-.main p {
+
+.main pre {
 	text-align: left;
 	width: 400px;
 	font-family: sans-serif;
 	color: gray;
 	font-size: 0.4em;
-	
 }
+
 .main .logo {
 	position: relative;
 	width: 400px;
 	height: 230px;
 	text-align: center;
 }
-.main .logo img{
+
+.main .logo img {
 	position: absolute;
-	left: -220px;
+	left: -233px;
+	top: 8px;
 }
 
 .Input {
-	padding-top: 200px;
+	padding-top: 263px;
 	margin: 0 auto;
 	float: left;
 	width: 300px;
 	height: 400px;
-	word-spacing: 1px;	
+	word-spacing: 1px;
 	letter-spacing: 1px;
 }
-.Input h2{
+
+.Input h2 {
 	font-family: "AkzB";
 	font-size: 2em;
 	text-align: right;
 }
+
 .Input input {
-	font-family: "AkzB";
-	background: white;
+	font-family: sans-serif;
+	background : white;
 	text-align: center;
-	color: black;	
+	color: black;
 	font-size: 1em;
+}
+
+
+h2 input {
+	float: left;
+	margin-left: 102px;
+	border: none;
+	font-size: 1.5em;
 	
 }
-.Input form{
-	text-align: right;	
-	font-family: "AkzB";
-	font-size: 1.2em;
-	
+
+.Input form {
+	text-align: right;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
 }
+
 .Input p {
 	text-align: right;
 	width: 400px;
 	font-family: sans-serif;
 	color: gray;
-	font-size: 1.6em;
-	
 }

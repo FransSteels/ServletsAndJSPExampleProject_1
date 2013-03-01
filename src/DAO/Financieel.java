@@ -23,10 +23,20 @@ public class Financieel implements Serializable {
 				ResultSet.CONCUR_READ_ONLY);
 
 	}
-	
+
 	public void addExpences(String Name, int amount, String date, String project)
 			throws SQLException {
-		stmt.execute("INSERT INTO expensesandincommings VALUES (null, '" + Name + "' , CURDATE() , '" + date + "' ," + amount+ ", '"+project+"' )");
+		stmt.execute("INSERT INTO expensesandincommings VALUES (null, '" + Name
+				+ "' , CURDATE() , '" + date + "' ," + amount + ", '" + project
+				+ "' )");
+		con.close();
+		stmt.close();
+	}
+
+	public int delete(int projectnumber) throws SQLException {
+		return stmt
+				.executeUpdate("DELETE FROM expensesandincommings WHERE expensesandincommings_id = "
+						+ projectnumber);
 	}
 
 	public Connection getCon() {
@@ -50,19 +60,17 @@ public class Financieel implements Serializable {
 		rs.afterLast();
 		while (rs.previous()) {
 			int count = 0;
+			restemp.append("<pre>");
 			for (int i = 0; i < x; i++) {
-				restemp.append(rs.getString(i + 1) + "\t"+ "\t");
+				restemp.append(rs.getString(i + 1) + "	");
 				count++;
 				if (count == x) {
-					restemp.append("<br />");
+					restemp.append("</pre>");
 				}
 			}
 		}
 		stmt.close();
-
 		this.result = restemp.toString();
 	}
-
-	
 
 }

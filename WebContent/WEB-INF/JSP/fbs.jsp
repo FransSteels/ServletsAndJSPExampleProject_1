@@ -23,7 +23,7 @@
 		<a href="AboutServlet" class="about"></a>
 		<a href="contact.html" class="contact"></a> 
 		<a href="woerk.html" class="work"></a>
-		<a href="smiley.html" class="smiley"></a>
+		<a href="FinancialServlet" class="smiley"></a>
 	
 	</div>
 	

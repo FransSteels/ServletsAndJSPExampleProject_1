@@ -10,15 +10,12 @@
 <body>
 
 	<div class="Input">
-			<form action="FinancialServletDelete" method="get">
-			<h2> <input type="submit" value="&#8592;">ADD</h2>
+			<form action="FinancialServlet" method="get">
+			<h2> <input type="submit" value="&#8592;">DELETE</h2>
 			</form>
-			<form action="FinancialServlet" method="post">
-			NAME <input type="text" name="name" value="PERSON X"><br /> <br />
-			VALUE <input type="text" name="value" value="500"> <br /> <br />
-			DATE <input type="text" name="date" value="2013-01-01"> <br />
-			<br /> PROJECT <input type="text" name="project" value="OPDRACHT X">
-			<br /> <br /> <input type="submit" value="ADD TO LIST" />
+			<form action="FinancialServletDelete" method="post">
+			NUMBER <input type="text" name="id" value="PROJECT NUMBER"><br /> <br />
+			<br /> <br /> <input type="submit" value="DELETE THIS PROJECT" />
 			<p>${succes}</p>
 		</form>
 	</div>
@@ -30,7 +27,7 @@
 			</a>
 		</div>
 
-		<form action="FinancialServlet" method="get">
+		<form action="FinancialServletDelete" method="get">
 			<input type="submit" value="GIV' DATA" />
 			<pre>Id	Name	Posted on		Payed on		$	Project
 			</pre>

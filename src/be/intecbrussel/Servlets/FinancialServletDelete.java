@@ -17,7 +17,7 @@ import DAO.Financieel;
 @WebServlet("/FinancialServletDelete")
 public class FinancialServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String VIEW = "/WEB-INF/JSP/FinancialDelete.jsp";
+	private static final String VIEW = "/WEB-INF/JSP/Financial.jsp";
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -28,11 +28,14 @@ public class FinancialServletDelete extends HttpServlet {
 		// TODO Auto-generated method stub
 		RequestDispatcher rqdp1 = request.getRequestDispatcher(VIEW);
 		Financieel fin;
+		request.setAttribute("x", 1);
+
 		try {
 			fin = new Financieel();
 			fin.setResult();
 			request.setAttribute("fin", fin);
 			rqdp1.forward(request, response);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,6 +51,8 @@ public class FinancialServletDelete extends HttpServlet {
 		// TODO Auto-generated method stub
 		RequestDispatcher rqdp1 = request.getRequestDispatcher(VIEW);
 		Financieel fin;
+		request.setAttribute("x", 1);
+
 		try {
 			int projectnumber = Integer.parseInt(request.getParameter("id"));
 			fin = new Financieel();

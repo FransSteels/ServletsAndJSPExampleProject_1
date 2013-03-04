@@ -29,7 +29,6 @@ public class Financieel implements Serializable {
 		stmt.execute("INSERT INTO expensesandincommings VALUES (null, '" + Name
 				+ "' , CURDATE() , '" + date + "' ," + amount + ", '" + project
 				+ "' )");
-		con.close();
 		stmt.close();
 	}
 
@@ -37,6 +36,14 @@ public class Financieel implements Serializable {
 		return stmt
 				.executeUpdate("DELETE FROM expensesandincommings WHERE expensesandincommings_id = "
 						+ projectnumber);
+	}
+	public void addUser(String Name, int Tel, String eMail, String dateOfBirth) throws SQLException{
+		stmt.execute("INSERT INTO user VALUES ('"+Name+"','" +Tel +"', '"+eMail+"', '"+dateOfBirth+"')");
+		stmt.close();
+	}
+	public void deleteUser(String Name) throws SQLException{
+		stmt.execute("DELETE FROM user WHERE Name='"+ Name+ "'");
+		stmt.close();
 	}
 
 	public Connection getCon() {
@@ -50,6 +57,7 @@ public class Financieel implements Serializable {
 	public String getResult() {
 		return result;
 	}
+
 
 	public void setResult() throws Exception {
 		ResultSet rs = stmt.executeQuery("SELECT*FROM expensesandincommings");

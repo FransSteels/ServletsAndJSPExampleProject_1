@@ -9,6 +9,7 @@ import java.util.Random;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,6 +37,16 @@ public class LennertServlet extends HttpServlet {
 
 		String path3 = getServletContext().getRealPath("/WEB-INF/conf/s2.txt");
 
+		StringBuilder refreshCookie = new StringBuilder();
+		refreshCookie.append("een");
+		refreshCookie.append(request.getParameter("ikbeneen"));
+		
+		if (refreshCookie.toString().equals("eencookie")) {
+			Cookie cookie = new Cookie("wachtwoordCookie", "1");
+			response.addCookie(cookie);
+			}
+				
+		
 		RequestDispatcher rqdp = request.getRequestDispatcher(VIEW);
 		StringBuilder message = new StringBuilder();
 		Random rand = new Random();

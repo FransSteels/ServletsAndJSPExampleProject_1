@@ -9,6 +9,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.sun.xml.internal.bind.v2.runtime.Name;
+
 public class Financieel implements Serializable {
 	private Connection con;
 	private Statement stmt;
@@ -29,7 +31,6 @@ public class Financieel implements Serializable {
 		stmt.execute("INSERT INTO expensesandincommings VALUES (null, '" + Name
 				+ "' , CURDATE() , '" + date + "' ," + amount + ", '" + project
 				+ "' )");
-		con.close();
 		stmt.close();
 	}
 
@@ -37,8 +38,30 @@ public class Financieel implements Serializable {
 		return stmt
 				.executeUpdate("DELETE FROM expensesandincommings WHERE expensesandincommings_id = "
 						+ projectnumber);
+
 	}
 
+	public void addUser(String Name, int Tel, String eMail, String dateOfBirth)
+			throws SQLException {
+		stmt.execute("INSERT INTO user VALUES ('" + Name + "','" + Tel + "', '"
+				+ eMail + "', '" + dateOfBirth + "')");
+		stmt.close();
+	}
+
+	public void deleteUser(String Name) throws SQLException {
+		stmt.execute("DELETE FROM user WHERE Name='" + Name + "'");
+		stmt.close();
+	}
+
+	public String getAmountPerUser(String name) throws SQLException{
+		ResultSet rs = stmt.executeQuery("SELECT SUM(amount) AS TotalPaid FROM expensesandincommings WHERE name = '"+ name+"'");
+		rs.next();
+		String result = "<pre>"+name+"	paid a total of "+rs.getInt(1)+" euro</pre>";
+		rs.close();
+		stmt.close();
+		return result;
+	}
+	
 	public Connection getCon() {
 		return con;
 	}
@@ -71,6 +94,47 @@ public class Financieel implements Serializable {
 		}
 		stmt.close();
 		this.result = restemp.toString();
+	}
+	public String getDataUsers() throws Exception {
+		ResultSet rs = stmt.executeQuery("SELECT*FROM user");
+		ResultSetMetaData mdt = rs.getMetaData();
+		int x = mdt.getColumnCount();
+		StringBuilder restemp = new StringBuilder();
+		
+		rs.afterLast();
+		while (rs.previous()) {
+			int count = 0;
+			restemp.append("<pre>");
+			for (int i = 0; i < x; i++) {
+				restemp.append(rs.getString(i + 1) + "	");
+				count++;
+				if (count == x) {
+					restemp.append("</pre>");
+				}
+			}
+		}
+		stmt.close();
+		return restemp.toString();
+	}
+	public String getDataUser(String name) throws Exception {
+		ResultSet rs = stmt.executeQuery("SELECT*FROM user Where name = '"
+				+ name + "'");
+		ResultSetMetaData mdt = rs.getMetaData();
+		int x = mdt.getColumnCount();
+		StringBuilder restemp = new StringBuilder();
+
+		rs.next();
+		int count = 0;
+		restemp.append("<pre>");
+		for (int i = 0; i < x; i++) {
+			restemp.append(rs.getString(i + 1) + "	");
+			count++;
+			if (count == x) {
+				restemp.append("</pre>");
+			}
+		}
+		stmt.close();
+		return restemp.toString();
 	}
 
 }

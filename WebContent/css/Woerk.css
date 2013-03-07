@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+
+@font-face {
+	font-family: EDW;
+	src: url('ITCEDSCR.TTF');
+}
+
+@font-face {
+	font-family: AkzC;
+	src: url('AkzidenzGrotesk-Cond.otf');
+}
+@font-face {
+	font-family: AkzB;
+	src: url('AkzidenzGrotesk-Cond.otf');
+}
+
+.logo {
+	margin: 0 auto;
+	width: 530px;
+	height: 230px;
+	text-align: center;
+}
+
+.logo a.home {
+	width: 530px;
+	height: 230px;
+	background-image: url("../pics/fbs_logo.png");
+}
+
+.FBS {
+	margin: 0 auto;
+	width: 315px;
+	height: 500px;
+}
+
+.FBS .h1 {
+	
+	font-family: "EDW";
+	text-align: center;
+	font-size: 3.5em;
+	padding-bottom: 0.5em;
+}
+
+
+.pics a{
+	float: left;
+	display: block;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	
+}
+.FBS .pics a img{
+	height: 19%;
+}
+
+
+
+
+
+

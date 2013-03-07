@@ -18,7 +18,6 @@ import DAO.Financieel;
 @WebServlet("/FinancialServlet")
 public class FinancialServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	private static final String VIEW = "/WEB-INF/JSP/Financial.jsp";
 
 	/**
@@ -37,13 +36,14 @@ public class FinancialServlet extends HttpServlet {
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		RequestDispatcher rqdp1 = request.getRequestDispatcher(VIEW);
-
 			Financieel fin;
+			request.setAttribute("x", 0);
 			try {
 			fin = new Financieel();
 			fin.setResult();
 			request.setAttribute("fin", fin);
 			rqdp1.forward(request, response);
+
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -59,6 +59,7 @@ public class FinancialServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rqdp1 = request.getRequestDispatcher(VIEW);
+		request.setAttribute("x", 0);
 
 		String name = request.getParameter("name");
 		int value = Integer.parseInt(request.getParameter("value"));

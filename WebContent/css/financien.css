@@ -40,6 +40,8 @@ body {
 	text-align: left;
 	color: black;
 	font-size: 1em;
+	border-radius:5px;
+	
 }
 
 .main pre {
@@ -71,12 +73,14 @@ body {
 	height: 400px;
 	word-spacing: 1px;
 	letter-spacing: 1px;
+	
 }
 
 .Input h2 {
 	font-family: "AkzB";
 	font-size: 2em;
 	text-align: right;
+	
 }
 
 .Input input {
@@ -85,6 +89,8 @@ body {
 	text-align: center;
 	color: black;
 	font-size: 1em;
+	border-radius: 5px;
+	
 }
 
 
@@ -93,6 +99,8 @@ h2 input {
 	margin-left: 102px;
 	border: none;
 	font-size: 1.5em;
+	border-radius: 5px;
+	
 	
 }
 

@@ -28,6 +28,7 @@
 }
 
 .FBS {
+	font-family: sans-serif;
 	margin: 0 auto;
 	width: 530px;
 	height: 700px;
@@ -66,6 +67,8 @@ input {
 	font-size: 1.3em;
 	text-align: center;
 	color: gray;
+	margin: 5px;
+	border-radius:5px;
 }
 
 
@@ -76,4 +79,16 @@ p {
 	font-family: sans-serif;
 	color: gray;
 	font-size: 0.8em;
+}
+ul{
+	list-style: none;
+	text-align: center;
+	font-family: sans-serif;
+	color: #484A46;	
+	line-height: 1.6em;
+	font-weight:bold;
+	}
+ul li a{
+	text-decoration: none;
+	color: #484A46;
 }
